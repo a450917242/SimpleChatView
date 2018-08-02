@@ -134,15 +134,12 @@ public class SimpleChatManager implements ISimpleChat {
         boolean isAtBottom = isAtBottom();
         if (!isAtBottom) {
             addNewsView();
-            mAdapter.addItemList(mBufferLists);
-            removeOverItems();
-        } else {
-            mAdapter.addItemList(mBufferLists);
-            removeOverItems();
-            runToBottom();
+            return;
         }
 
-
+        mAdapter.addItemList(mBufferLists);
+        removeOverItems();
+        runToBottom();
     }
 
     @Override
